@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: $light-color;
+
+    .about-text {
+        flex: 1;
+        padding: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        color: $dark-color;
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: $primary-color;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    }
+}

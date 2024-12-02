@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// Navbar simplifiée avec un effet au survol
+.navbar {
+    background-color: $light-color;
+    padding: 1rem 2rem;
+
+    .navbar-brand {
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        font-size: 1.8rem;
+        color: $primary-color;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+
+    .navbar-nav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        .nav-link {
+            font-family: 'Roboto', sans-serif;
+            color: $dark-color;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $primary-color;
+            }
+
+            &.active {
+                color: $secondary-color;
+                font-weight: bold;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar-nav {
+            display: none;
+
+            &.active {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                background-color: $light-color;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 1rem;
+            }
+        }
+
+        .navbar-toggler {
+            display: block;
+            border: none;
+            background-color: $secondary-color;
+        }
+    }
+}

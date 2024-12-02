@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.hero {
+    background-color: $secondary-color;
+    color: $dark-color;
+    padding: 100px 0;
+    text-align: center;
+    height: 100vh;
+
+    h1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+}
