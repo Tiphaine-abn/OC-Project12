@@ -1,0 +1,70 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.contact {
+    padding: 50px 20px;
+    background: $light-background;
+    color: $dark-color;
+
+    h2 {
+        font-family: $font-title;
+        font-size: 36px;
+        margin-bottom: 30px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: $primary-color;
+        }
+    }
+
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+
+            label {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            input,
+            textarea {
+                padding: 10px;
+                border: 1px solid $dark-color;
+                border-radius: 5px;
+                font-size: 16px;
+
+                &:focus {
+                    border-color: $secondary-color;
+                    outline: none;
+                }
+            }
+        }
+
+        .contact-button {
+            padding: 12px 20px;
+            background: $accent-color;
+            color: $light-color;
+            font-size: 16px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background: darken($accent-color, 10%);
+                font-weight: bold;
+            }
+        }
+    }
+}

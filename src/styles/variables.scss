@@ -1,21 +1,17 @@
-// Variables globales
-$primary-color: #DABFFF;
-$secondary-color: #907AD6;
-$accent-color: #7FDEFF;
-$dark-color: #2C2A4A;
-$light-color: #FFFFFF;
+// Couleurs principales
+$primary-color: #DABFFF; // Mauve
+$secondary-color: #907AD6; // Tropical Indigo
+$accent-color: #7FDEFF; // Pale Azure
+$dark-color: #2C2A4A; // Space Cadet
+$light-color: #FFFFFF; // Blanc
 
 // Palette de couleurs
-$light-background: #ffffff;
-$dark-background: #141B41;
-$mauve: #DABFFF;
-$tropical-indigo: #907AD6;
-$space-cadet: #2C2A4A;
-$pale-azure: #7FDEFF;
-$jordy-blue: #98B9F2;
-$green-blue: #306BAC;
-$cornflower-blue: #6F9CEB;
+$light-background: $light-color;
+$dark-background: #141B41; // Space Cadet foncé
+$jordy-blue: #98B9F2; // Bleu clair pour texte sombre
+$green-blue: #306BAC; // Accent sombre
+$cornflower-blue: #6F9CEB; // Ton clair pour boutons
 
 // Font families
-$font-logo: 'Inter', sans-serif;
+$font-title: 'Inter', sans-serif;
 $font-text: 'Roboto', sans-serif;

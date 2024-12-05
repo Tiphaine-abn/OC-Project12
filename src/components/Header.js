@@ -1,27 +1,60 @@
-import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style/Header.scss';
+import logo from '../assets/images/TA_3.webp';
 
 function Header() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    // Fonction pour basculer l'état du menu
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    // Fonction pour fermer le menu
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     return (
-        <Navbar>
-            <Container>
-                <Navbar.Brand as={Link} to="/">Tiphaine Aubin</Navbar.Brand>
-                <Navbar.Toggle />
-                <Navbar.Collapse>
-                    <Nav>
-                        <Nav.Link as={Link} to="/"></Nav.Link>
-                        <Nav.Link as={Link} to="/about">À propos</Nav.Link>
-                        <Nav.Link as={Link} to="/about">Parcours</Nav.Link>
-                        <Nav.Link as={Link} to="/about">Compétences</Nav.Link>
-                        <Nav.Link as={Link} to="/portfolio">Portfolio</Nav.Link>
-                        <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
+        <Navbar expand="lg" className="navbar-custom">
+            <Navbar.Brand as={Link} to="/">
+                <img src={logo} alt="Tiphaine Aubin Logo" className="logo" />
+            </Navbar.Brand>
+
+            {/* Le bouton pour ouvrir/fermer le menu burger */}
+            <Navbar.Toggle
+                aria-controls="basic-navbar-nav"
+                onClick={toggleMenu}
+                className={menuOpen ? 'active' : ''}
+            />
+
+            {/* Navbar.Collapse gère l'affichage du menu en fonction de menuOpen */}
+            <Navbar.Collapse id="basic-navbar-nav" className={menuOpen ? 'active' : ''}>
+                <Nav>
+                    {/* Liens pour naviguer vers les sections de la page d'accueil */}
+                    <Nav.Link as={Link} to="/#about" onClick={closeMenu} className="nav-link">
+                        À propos
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/#career" onClick={closeMenu} className="nav-link">
+                        Parcours
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/#skills" onClick={closeMenu} className="nav-link">
+                        Compétences
+                    </Nav.Link>
+
+                    {/* Liens vers les pages Portfolio et Contact */}
+                    <Nav.Link as={Link} to="/portfolio" onClick={closeMenu} className="portfolio-link">
+                        Portfolio
+                    </Nav.Link>
+                    <Nav.Link as={Link} to="/contact" onClick={closeMenu} className="contact-link">
+                        Contact
+                    </Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>
-    )
-};
+    );
+}
 
 export default Header;

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Oh My Food",
+        "description": "Site web statique utilisant Sass.",
+        "image": "ohmyfoodImg",
+        "siteLink": "#",
+        "codeLink": "https://github.com/Tiphaine-abn/OC-Project4"
+    },
+    {
+        "id": 2,
+        "title": "Kasa",
+        "description": "Application React pour la gestion immobilière.",
+        "image": "kasaImg",
+        "siteLink": "#",
+        "codeLink": "https://github.com/Tiphaine-abn/OC-Project7"
+    },
+    {
+        "id": 3,
+        "title": "Argent Bank",
+        "description": "Application bancaire utilisant Redux.",
+        "image": "argentbankImg",
+        "siteLink": "#",
+        "codeLink": "https://github.com/Tiphaine-abn/ArgentBank-Frontend"
+    },
+    {
+        "id": 4,
+        "title": "Sophie Bluel",
+        "description": "Portfolio dynamique avec Javascript.",
+        "image": "sophiebluelImg",
+        "siteLink": "#",
+        "codeLink": "https://github.com/Tiphaine-abn/OC-Project6"
+    }
+]
