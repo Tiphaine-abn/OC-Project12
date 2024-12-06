@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // Pour détecter les changements d'URL
+import Timeline from "../components/Timeline";
 import './style/Home.scss';
 
 function Home() {
@@ -35,17 +36,7 @@ function Home() {
 
             <section id="career" className="sections">
                 <h2>Parcours</h2>
-                <div className="timeline">
-                    <div className="timeline-line" />
-                    <div className="timeline-item timeline-item-left">
-                        <h3>2024 - Développeuse Web</h3>
-                        <p>Création de sites modernes.</p>
-                    </div>
-                    <div className="timeline-item timeline-item-right">
-                        <h3>2024 - Formation</h3>
-                        <p>Certification Développeuse - Intégratrice Web chez OpenClassrooms.</p>
-                    </div>
-                </div>
+                <Timeline />
             </section>
             <section id="skills" className="sections">
                 <h2>Compétences</h2>
@@ -65,7 +56,7 @@ function Home() {
                     </div>
                 </div>
 
-                <h3>Services</h3>
+                <h3>Domaines d'intervention</h3>
                 <div className="services-table">
                     <div className="service-item">
                         <h4>Création de sites Web responsives</h4>

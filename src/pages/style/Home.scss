@@ -14,7 +14,7 @@
     position: relative;
     overflow: hidden;
 
-    /* Parallax effect */
+    /* Parallax : mouvement de déplacement du fond de haut en bas */
     &::before {
         content: '';
         position: absolute;
@@ -28,7 +28,7 @@
         animation: parallax 20s infinite linear;
     }
 
-    /* Parallax animation */
+    /* Parallax : mouvement fluide vertical sur le fond */
     @keyframes parallax {
         0% {
             transform: translateY(0) scale(1.2);
@@ -43,6 +43,7 @@
         }
     }
 
+    /* Apparition progressive du contenu en glissant légèrement vers le haut */
     .hero-content {
         color: $light-color;
         animation: fadeIn 2s ease-out;
@@ -141,6 +142,7 @@
     background: $dark-background;
     color: $jordy-blue;
 
+    /* Chronologie stylisée */
     .timeline {
         margin-top: 40px;
         position: relative;
@@ -213,7 +215,6 @@
         }
     }
 }
-
 
 #skills {
     background: linear-gradient(135deg, $dark-color, $accent-color);

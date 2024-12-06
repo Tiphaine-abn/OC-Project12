@@ -4,13 +4,13 @@
         "title": "Oh My Food",
         "description": "Site web statique utilisant Sass.",
         "image": "ohmyfoodImg",
-        "siteLink": "#",
+        "siteLink": "https://tiphaine-abn.github.io/OC-Project4/",
         "codeLink": "https://github.com/Tiphaine-abn/OC-Project4"
     },
     {
         "id": 2,
         "title": "Kasa",
-        "description": "Application React pour la gestion immobilière.",
+        "description": "Application React de gestion immobilière.",
         "image": "kasaImg",
         "siteLink": "#",
         "codeLink": "https://github.com/Tiphaine-abn/OC-Project7"

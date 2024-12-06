@@ -17,7 +17,7 @@ function Footer() {
                         </li>
                         <li>
                             <FontAwesomeIcon icon={faPhone} />
-                            06.63.98.41.04
+                            +33 6 63 98 41 04
                         </li>
                         <li>
                             <FontAwesomeIcon icon={faMapMarkerAlt} />

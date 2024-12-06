@@ -7,7 +7,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
     position: relative;
     margin-left: 20px;
     margin-right: 20px;
@@ -19,7 +18,7 @@
         justify-content: center;
 
         img.logo {
-            height: 100px;
+            height: 90px;
             width: auto;
             max-height: 100%;
             transition: transform 0.2s ease;
@@ -29,7 +28,7 @@
             }
         }
 
-        &:hover {
+        c &:hover {
             color: $secondary-color;
         }
 
@@ -56,11 +55,6 @@
 
             &:hover {
                 color: $accent-color;
-                font-weight: bold;
-            }
-
-            &.active {
-                color: $primary-color;
                 font-weight: bold;
             }
         }

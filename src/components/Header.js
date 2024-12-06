@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style/Header.scss';
-import logo from '../assets/images/TA_3.webp';
+import logo from '../assets/images/logo.png';
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    console.log(menuOpen)
 
     // Fonction pour basculer l'état du menu
     const toggleMenu = () => {
@@ -16,6 +17,7 @@ function Header() {
     const closeMenu = () => {
         setMenuOpen(false);
     };
+    console.log(menuOpen)
 
     return (
         <Navbar expand="lg" className="navbar-custom">
@@ -23,15 +25,12 @@ function Header() {
                 <img src={logo} alt="Tiphaine Aubin Logo" className="logo" />
             </Navbar.Brand>
 
-            {/* Le bouton pour ouvrir/fermer le menu burger */}
-            <Navbar.Toggle
-                aria-controls="basic-navbar-nav"
-                onClick={toggleMenu}
-                className={menuOpen ? 'active' : ''}
-            />
+            {/* Bouton pour ouvrir/fermer le menu burger */}
+            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
 
             {/* Navbar.Collapse gère l'affichage du menu en fonction de menuOpen */}
-            <Navbar.Collapse id="basic-navbar-nav" className={menuOpen ? 'active' : ''}>
+            <Navbar.Collapse id="basic-navbar-nav">
+
                 <Nav>
                     {/* Liens pour naviguer vers les sections de la page d'accueil */}
                     <Nav.Link as={Link} to="/#about" onClick={closeMenu} className="nav-link">
