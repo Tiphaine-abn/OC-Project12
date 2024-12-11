@@ -1,23 +1,27 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom'; // Pour détecter les changements d'URL
 import Timeline from "../components/Timeline";
+import { SiHtml5, SiCss3, SiSass, SiJavascript, SiReact, SiGithub, SiRedux, SiSwagger, SiMongodb, SiNotion, SiTrello } from "react-icons/si";
+import { BiLogoNodejs, BiLogoVisualStudio } from "react-icons/bi";
+import avatar from '../assets/images/Avatar.webp';
 import './style/Home.scss';
 
 function Home() {
     const location = useLocation(); // Pour écouter les changements d'URL
 
     useEffect(() => {
-        // Vérifie si un hash est présent dans l'URL
-        const hash = window.location.hash;  // Récupère la partie hash de l'URL
-
+        const hash = window.location.hash; // Récupère le hash dans l'URL
         if (hash) {
-            const element = document.querySelector(hash); // Cherche l'élément correspondant
+            const element = document.querySelector(hash); // Sélectionne l'élément correspondant
             if (element) {
-                // Faire défiler la page vers l'élément correspondant
-                window.scrollTo({ top: element.offsetTop - 80, behavior: 'smooth' });
+                const navbarHeight = document.querySelector('.navbar-custom').offsetHeight; // Hauteur de la barre de navigation
+                window.scrollTo({
+                    top: element.offsetTop - navbarHeight, // Ajuste avec la hauteur
+                    behavior: 'smooth',
+                });
             }
         }
-    }, [location]); // Re-exécute lorsque l'URL change
+    }, [location]);
 
     return (
         <main>
@@ -31,7 +35,27 @@ function Home() {
 
             <section id="about" className="sections">
                 <h2>À propos</h2>
-                <p>Lorem ipsum dolor sit amet...</p>
+                <div className="about-header">
+                    <h3>Développeuse Web Junior : Passionnée et créative !</h3>
+                </div>
+                <div className="about-content">
+                    <img src={avatar} alt="Avatar de Tiphaine Aubin" className="profile-photo" />
+                    <div className="about-text">
+                        <p>
+                            Après plusieurs années dans le secteur de la culture et du patrimoine, j’ai choisi de réorienter ma carrière
+                            vers le développement web pour donner vie à des projets innovants. Attirée par le potentiel du web à transformer
+                            notre quotidien, je me suis spécialisée dans la création de sites intuitifs, fonctionnels et esthétiques.
+                        </p>
+                        <p>
+                            Au fil de ma formation et de mes projets, j’ai acquis une solide maîtrise des technologies Front-End comme
+                            <strong> HTML5, CSS3, JavaScript</strong> et <strong>React</strong>, ainsi que des outils collaboratifs tels que
+                            <strong> Git, Trello</strong> et <strong>Notion</strong>.
+                        </p>
+                        <p>J’apprécie particulièrement le processus de transformer
+                            une idée ou une maquette en une interface utilisateur fonctionnelle et engageante.
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section id="career" className="sections">
@@ -44,15 +68,31 @@ function Home() {
                 <div className="skills-grid">
                     <div className="skill frontend">
                         <h3>Frontend</h3>
-                        <p>HTML3, CSS3, Sass, JavaScript, React, Redux</p>
+                        <div className="icons">
+                            <SiHtml5 aria-label="HTML5" title="HTML5" />
+                            <SiCss3 aria-label="CSS3" title="CSS3" />
+                            <SiSass aria-label="Sass" title="Sass" />
+                            <SiJavascript aria-label="JavaScript" title="JavaScript" />
+                            <SiReact aria-label="React" title="React" />
+                            <SiRedux aria-label="Redux" title="Redux" />
+                        </div>
                     </div>
                     <div className="skill backend">
                         <h3>Backend</h3>
-                        <p>Node.js, MongoDB, API Swagger</p>
+                        <div className="icons">
+                            <BiLogoNodejs aria-label="Node.js" title="Node.js" />
+                            <SiMongodb aria-label="MongoDB" title="MongoDB" />
+                            <SiSwagger aria-label="Swagger" title="Swagger" />
+                        </div>
                     </div>
                     <div className="skill tools">
                         <h3>Outils</h3>
-                        <p>GitHub, VSCode</p>
+                        <div className="icons">
+                            <BiLogoVisualStudio aria-label="Visual Studio Code" title="Visual Studio Code" />
+                            <SiGithub aria-label="GitHub" title="GitHub" />
+                            <SiNotion aria-label="Notion" title="Notion" />
+                            <SiTrello aria-label="Trello" title="Trello" />
+                        </div>
                     </div>
                 </div>
 
@@ -91,9 +131,8 @@ function Home() {
                         <p>Suivi des dernières technologies pour offrir des solutions modernes</p>
                     </div>
                 </div>
-
             </section>
-        </main>
+        </main >
     );
 }
 

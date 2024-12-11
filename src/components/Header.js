@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style/Header.scss';
@@ -6,30 +6,37 @@ import logo from '../assets/images/logo.png';
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    console.log(menuOpen)
+    const [scrolled, setScrolled] = useState(false);
 
-    // Fonction pour basculer l'état du menu
+    // Fonction pour surveiller le défilement
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
-    // Fonction pour fermer le menu
     const closeMenu = () => {
         setMenuOpen(false);
     };
-    console.log(menuOpen)
 
     return (
-        <Navbar expand="lg" className="navbar-custom">
-            <Navbar.Brand as={Link} to="/">
+        <Navbar expand="lg" className={`navbar-custom ${scrolled ? 'scrolled' : ''}`}>
+            <Navbar.Brand as={Link} to="/" onClick={closeMenu}>
                 <img src={logo} alt="Tiphaine Aubin Logo" className="logo" />
             </Navbar.Brand>
 
             {/* Bouton pour ouvrir/fermer le menu burger */}
-            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={toggleMenu} aria-expanded={menuOpen} />
 
             {/* Navbar.Collapse gère l'affichage du menu en fonction de menuOpen */}
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse id="basic-navbar-nav" in={menuOpen}>
 
                 <Nav>
                     {/* Liens pour naviguer vers les sections de la page d'accueil */}

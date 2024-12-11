@@ -3,32 +3,104 @@
         "id": 1,
         "title": "Oh My Food",
         "description": "Site web statique utilisant Sass.",
+        "modalDescription": "Le projet Ohmyfood est un site web mobile-first développé pour une startup qui se lance sur le marché parisien après avoir réussi à New York. Ce site répertorie les menus de restaurants gastronomiques et permet aux clients de commander leurs repas à l'avance pour réduire les temps d'attente. Le site est entièrement responsive, s'adaptant aux écrans mobiles, tablettes et ordinateurs, et inclut les menus de 4 restaurants au lancement. Le développement a été réalisé en utilisant SASS pour le CSS, avec des animations CSS intégrées pour améliorer l'expérience utilisateur.",
         "image": "ohmyfoodImg",
         "siteLink": "https://tiphaine-abn.github.io/OC-Project4/",
-        "codeLink": "https://github.com/Tiphaine-abn/OC-Project4"
+        "codeLink": "https://github.com/Tiphaine-abn/OC-Project4",
+        "technologies": [
+            {
+                "name": "HTML",
+                "icon": "FaHtml5"
+            },
+            {
+                "name": "CSS",
+                "icon": "FaCss3Alt"
+            },
+            {
+                "name": "Sass",
+                "icon": "FaSass"
+            }
+        ]
     },
     {
         "id": 2,
         "title": "Kasa",
         "description": "Application React de gestion immobilière.",
+        "modalDescription": "Le projet Kasa consistait à refondre le site de location d'appartements en migrant le front-end vers React. Le site a été développé en suivant des maquettes Figma pour créer une interface responsive et fonctionnelle. Les données étaient simulées avec un fichier JSON, en attendant que le back-end soit prêt. Le site inclut des fonctionnalités comme une galerie d'images avec défilement circulaire et des menus déroulants animés. Le développement a été réalisé avec React, Sass pour le CSS, et des animations CSS, conformément aux spécifications fournies.",
         "image": "kasaImg",
         "siteLink": "#",
-        "codeLink": "https://github.com/Tiphaine-abn/OC-Project7"
+        "codeLink": "https://github.com/Tiphaine-abn/OC-Project7",
+        "technologies": [
+            {
+                "name": "React",
+                "icon": "FaReact"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "FaJsSquare"
+            },
+            {
+                "name": "CSS",
+                "icon": "FaCss3Alt"
+            }
+        ]
     },
     {
         "id": 3,
         "title": "Argent Bank",
         "description": "Application bancaire utilisant Redux.",
+        "modalDescription": "Le projet ArgentBank consistait en la création d'une application web pour une banque en ligne. La première phase a impliqué la mise en place du système d'authentification avec React, où les utilisateurs peuvent se connecter, se déconnecter et gérer leur profil. Le state de l'application est géré avec Redux et les bonnes pratiques de développement ont été appliquées, comme l'optimisation des images et la création de composants réutilisables. La deuxième phase du projet s'est concentrée sur la gestion des transactions : les utilisateurs peuvent visualiser, ajouter, modifier ou supprimer des informations de transactions. Les routes API nécessaires ont été définies et documentées en suivant les directives de Swagger pour permettre l'intégration avec le back-end.",
         "image": "argentbankImg",
         "siteLink": "#",
-        "codeLink": "https://github.com/Tiphaine-abn/ArgentBank-Frontend"
+        "codeLink": "https://github.com/Tiphaine-abn/ArgentBank-Frontend",
+        "technologies": [
+            {
+                "name": "React",
+                "icon": "FaReact"
+            },
+            {
+                "name": "Redux",
+                "icon": "SiRedux"
+            },
+            {
+                "name": "JavaScript",
+                "icon": "FaJsSquare"
+            },
+            {
+                "name": "CSS",
+                "icon": "FaCss3Alt"
+            },
+            {
+                "name": "Swagger",
+                "icon": "SiSwagger"
+            },
+            {
+                "name": "MongoDB",
+                "icon": "SiMongodb"
+            }
+        ]
     },
     {
         "id": 4,
         "title": "Sophie Bluel",
         "description": "Portfolio dynamique avec Javascript.",
+        "modalDescription": "Le projet consistait à développer le site portfolio d'une architecte d’intérieur pour l’agence ArchiWebos. J'ai intégré l'équipe pour travailler sur le front-end du site, notamment la page de présentation des travaux de l'architecte, la page de connexion de l'administratrice du site et la modale d'upload de médias. Le site a été conçu en suivant les maquettes Figma, et le code front-end a été intégré avec le back-end pour la persistance des données. J'ai également utilisé le Kanban pour organiser les tâches et suivre l’avancement du projet.",
         "image": "sophiebluelImg",
         "siteLink": "#",
-        "codeLink": "https://github.com/Tiphaine-abn/OC-Project6"
+        "codeLink": "https://github.com/Tiphaine-abn/OC-Project6",
+        "technologies": [
+            {
+                "name": "JavaScript",
+                "icon": "FaJsSquare"
+            },
+            {
+                "name": "CSS",
+                "icon": "FaCss3Alt"
+            },
+            {
+                "name": "Swagger",
+                "icon": "SiSwagger"
+            }
+        ]
     }
 ]

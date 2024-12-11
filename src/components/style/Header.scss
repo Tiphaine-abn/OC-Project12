@@ -3,19 +3,25 @@
 
 /* Header Styling */
 .navbar-custom {
+    position: static;
     background-color: $light-color;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin-left: 20px;
-    margin-right: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 10;
+
+    &.scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
     /* Logo */
     .navbar-brand {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-left: 20px;
 
         img.logo {
             height: 90px;
@@ -28,7 +34,7 @@
             }
         }
 
-        c &:hover {
+        &:hover {
             color: $secondary-color;
         }
 
@@ -43,6 +49,8 @@
         align-items: center;
         gap: 1rem;
         margin-left: auto;
+        padding-left: 20px;
+        padding-right: 20px;
         cursor: pointer;
 
         .nav-link {
@@ -138,6 +146,7 @@
         .navbar-toggler {
             display: block;
             padding: 0.5rem;
+            margin-right: 20px;
             border-radius: 5px;
             width: 40px;
             height: 40px;

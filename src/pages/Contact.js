@@ -1,9 +1,20 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import ContactForm from '../components/ContactForm';
 import './style/Contact.scss';
 
 const Contact = () => {
+    // Fonction appelée lors de l'envoi du formulaire
+    const handleFormSubmit = ({ fullName, email, subject, message }) => {
+        const mailtoLink = `mailto:tiphaine.aubin28@hotmail.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+            `Nom: ${fullName}\nEmail: ${email}\n\nMessage:\n${message}`
+        )}`;
+
+        // Ouvre le client de messagerie avec les informations du formulaire
+        window.location.href = mailtoLink;
+    };
+
     return (
         <section className="contact" id="contact">
             <div className="contact-container">
@@ -22,26 +33,8 @@ const Contact = () => {
                         <p>Paris, France</p>
                     </div>
                 </div>
-                <form className="contact-form">
-                    <h2>Contact</h2>
-                    <div className="form-group">
-                        <label htmlFor="fullName">Nom et Prénom *</label>
-                        <input type="text" id="fullName" name="fullName" placeholder="Votre nom et prénom" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="email">Email *</label>
-                        <input type="email" id="email" name="email" placeholder="Votre email" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="subject">Objet *</label>
-                        <input type="text" id="subject" name="subject" placeholder="Objet de votre message" required />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="message">Message *</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
-                    </div>
-                    <button type="submit" className="contact-button">Envoyer</button>
-                </form>
+
+                <ContactForm onSubmit={handleFormSubmit} />
             </div>
         </section>
     );
