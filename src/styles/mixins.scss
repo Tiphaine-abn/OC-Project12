@@ -1,0 +1,96 @@
+// Fond avec dégradé et image
+@mixin background-gradient($gradient-start, $gradient-end, $image-url) {
+    background: linear-gradient(to bottom, $gradient-start, $gradient-end),
+        url($image-url) no-repeat center center / cover;
+}
+
+// Ombres portées
+@mixin box-shadow($x: 0, $y: 4px, $blur: 8px, $color: rgba(0, 0, 0, 0.3)) {
+    box-shadow: $x $y $blur $color;
+}
+
+// Bordures arrondies
+@mixin border-radius($radius: 10px) {
+    border-radius: $radius;
+}
+
+// Hover des boutons
+@mixin button-hover($bg-color, $lighten: 10%) {
+    &:hover {
+        background: lighten($bg-color, $lighten);
+    }
+}
+
+// Hover des icons
+@mixin social-icon-hover($color, $scale: 1.1, $transition-duration: 0.4s) {
+    &:hover {
+        color: $color;
+        transform: scale($scale);
+        transition: transform $transition-duration ease, color 0.3s ease;
+    }
+}
+
+// Grille flexible
+@mixin grid($columns: auto-fit, $min-width: 300px, $gap: 20px) {
+    display: grid;
+    grid-template-columns: repeat($columns, minmax($min-width, 1fr));
+    gap: $gap;
+}
+
+// Transitions
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease) {
+    transition: $properties $duration $timing;
+}
+
+// Transitions de la modale
+@mixin modal-transition($max-height: 70vh, $duration: 0.5s) {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $duration ease-in-out;
+
+    &.open {
+        max-height: $max-height;
+    }
+}
+
+// Animation fadeIn
+@mixin fade-in($duration: 0.8s, $delay: 0s) {
+    animation: fadeInUp $duration ease-out $delay forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@mixin fade-in-down($duration, $delay) {
+    animation: fadeInDown $duration $delay forwards;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Style `::after` pour les titres
+@mixin after-line($width: 80px, $height: 4px, $background: $primary-color) {
+    content: '';
+    display: block;
+    width: $width;
+    height: $height;
+    background: $background;
+}

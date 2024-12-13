@@ -1,22 +1,20 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-/* Header Styling */
 .navbar-custom {
     position: static;
     background-color: $light-color;
-    transition: background-color 0.3s, box-shadow 0.3s;
     z-index: 10;
+    @include transition(background-color 0.3s, box-shadow 0.3s);
 
     &.scrolled {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        @include box-shadow(0, 4px, 6px, rgba(0, 0, 0, 0.1));
     }
 
-    /* Logo */
     .navbar-brand {
         display: flex;
         align-items: center;
@@ -43,7 +41,6 @@
         }
     }
 
-    /* Navigation Links */
     .navbar-nav {
         display: flex;
         align-items: center;
@@ -69,9 +66,9 @@
 
         .portfolio-link,
         .contact-link {
-            border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
+            @include border-radius(5px);
+            @include transition(background-color 0.3s, color 0.3s);
         }
 
         .portfolio-link {
@@ -147,9 +144,9 @@
             display: block;
             padding: 0.5rem;
             margin-right: 20px;
-            border-radius: 5px;
             width: 40px;
             height: 40px;
+            @include border-radius(5px);
 
             &:focus,
             &:hover {

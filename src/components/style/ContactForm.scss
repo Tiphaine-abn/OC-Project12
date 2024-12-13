@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .contact-form {
     flex: 2;
@@ -42,12 +43,8 @@
         font-size: 16px;
         text-transform: uppercase;
         border: none;
-        border-radius: 5px;
         cursor: pointer;
-
-        &:hover {
-            background: darken($accent-color, 10%);
-            font-weight: bold;
-        }
+        @include border-radius(5px);
+        @include button-hover($accent-color, 10%);
     }
 }

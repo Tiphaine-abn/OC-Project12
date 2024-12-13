@@ -1,11 +1,9 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+// HERO SECTION
 .hero {
-    background: linear-gradient(to bottom,
-            rgba(218, 191, 255, 0.7),
-            rgba(144, 122, 214, 0.7)),
-        url('../../assets/abstract-background.jpg') no-repeat center center / cover;
+    @include background-gradient(rgba(218, 191, 255, 0.7), rgba(144, 122, 214, 0.7), '../../assets/abstract-background.jpg');
     height: 100vh;
     display: flex;
     align-items: center;
@@ -13,39 +11,11 @@
     text-align: center;
     position: relative;
 
-    /* Parallax : mouvement de déplacement du fond de haut en bas */
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: inherit;
-        transform: scale(1.2);
-        z-index: -1;
-        animation: parallax 20s infinite linear;
-    }
-
-    /* Parallax : mouvement fluide vertical sur le fond */
-    @keyframes parallax {
-        0% {
-            transform: translateY(0) scale(1.2);
-        }
-
-        50% {
-            transform: translateY(-10%) scale(1.2);
-        }
-
-        100% {
-            transform: translateY(0) scale(1.2);
-        }
-    }
-
-    /* Apparition progressive du contenu en glissant légèrement vers le haut */
     .hero-content {
         color: $light-color;
-        animation: fadeIn 2s ease-out;
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 1s ease-out 0s forwards;
 
         .hero-title {
             font-family: $font-title;
@@ -73,8 +43,9 @@
             border-radius: 5px;
             text-transform: uppercase;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            @include box-shadow(0, 4px, 8px, rgba(0, 0, 0, 0.3));
+            @include transition(0.3s, ease);
+            transition: background-color 0.4s ease;
 
             &:hover {
                 background-color: lighten($secondary-color, 10%);
@@ -83,17 +54,17 @@
             }
         }
     }
+}
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
 
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -101,7 +72,8 @@
     background: $light-color;
     padding: 50px;
     min-height: 100vh;
-    animation: fadeIn 2s ease-out;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 
     h2 {
         font-family: $font-title;
@@ -127,6 +99,7 @@
     }
 }
 
+// ABOUT SECTION
 #about {
     background: linear-gradient(to right, $primary-color, $accent-color);
     color: $dark-color;
@@ -151,24 +124,39 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.6s ease-out, transform 0.7s ease-out;
+        animation: fadeInLeft 1s ease-out 1s forwards;
 
-        @media (min-width: 768px) {
+        @media (min-width: 1170px) {
             flex-direction: row;
             justify-content: center;
         }
 
+        @media (max-width: 1170px) {
+            text-align: center;
+        }
+
         .profile-photo {
-            width: 150px;
-            height: 150px;
+            width: 40vw;
+            height: auto;
+            max-width: 300px;
+            min-width: 150px;
             border-radius: 50%;
             margin-bottom: 20px;
 
             @media (min-width: 768px) {
+                width: 25vw;
                 width: 300px;
-                height: 300px;
+                height: auto;
                 border-radius: 20%;
-                margin-bottom: 0;
                 margin-right: 50px;
+            }
+
+            @media (max-width: 767px) {
+                width: 50vw;
+                max-width: 250px;
             }
         }
 
@@ -192,11 +180,23 @@
     }
 }
 
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// CAREER SECTION
 #career {
     background: $dark-background;
     color: $jordy-blue;
 
-    /* Chronologie */
     .timeline {
         margin-top: 40px;
         position: relative;
@@ -223,7 +223,9 @@
         line-height: 1.5;
         display: flex;
         flex-direction: column;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease-out 1.5s forwards;
 
         &:hover {
             transform: scale(1.05);
@@ -270,9 +272,18 @@
     }
 }
 
+// SKILLS SECTION
 #skills {
     background: linear-gradient(135deg, $dark-color, $accent-color);
     color: $light-color;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
     .skills-grid {
         display: grid;
@@ -280,6 +291,9 @@
         gap: 20px;
         margin-top: 30px;
         margin-bottom: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+        @include fade-in-down(1s, 0.8s);
 
         @media (max-width: 920px) {
             grid-template-columns: 1fr;
@@ -289,7 +303,7 @@
             border-radius: 10px;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
 
             &:hover {
                 transform: scale(1.05);
@@ -300,6 +314,18 @@
                 font-size: 20px;
                 color: $jordy-blue;
                 font-weight: bold;
+            }
+
+            @keyframes fadeInDown {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-30px); // Les éléments commencent plus haut
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0); // Les éléments reviennent à leur position d'origine
+                }
             }
 
             .icons {
@@ -345,6 +371,7 @@
                     color: $primary-color;
                 }
             }
+
         }
     }
 
@@ -358,6 +385,8 @@
         display: grid;
         gap: 20px;
         grid-template-columns: 1fr 1fr;
+        opacity: 0;
+        @include fade-in-down(1s, 0.8s);
     }
 
     .service-item {

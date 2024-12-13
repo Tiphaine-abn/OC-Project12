@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import './style/Portfolio.scss';
+import React, { useState, useEffect } from 'react';
 import ohmyfoodImg from '../assets/images/ohmyfood.webp';
 import kasaImg from '../assets/images/kasa.webp';
 import argentbankImg from '../assets/images/argentbank.webp';
 import sophiebluelImg from '../assets/images/sophiebluel.webp';
 import { FaSass, FaHtml5, FaCss3Alt, FaReact, FaJsSquare } from 'react-icons/fa';
 import { SiRedux, SiSwagger, SiMongodb } from "react-icons/si";
-
 import projects from '../data/projects.json';
+import './style/Portfolio.scss';
 
 function Portfolio() {
     const images = {
@@ -39,58 +38,58 @@ function Portfolio() {
     const getTechnologyIcon = (IconComponent) => {
         switch (IconComponent) {
             case 'FaSass':
-                return <FaSass />;
+                return <FaSass aria-label="Sass" />;
             case 'FaHtml5':
-                return <FaHtml5 />;
+                return <FaHtml5 aria-label="HTML5" />;
             case 'FaCss3Alt':
-                return <FaCss3Alt />;
+                return <FaCss3Alt aria-label="CSS3" />;
             case 'FaReact':
-                return <FaReact />;
+                return <FaReact aria-label="React" />;
             case 'FaJsSquare':
-                return <FaJsSquare />;
+                return <FaJsSquare aria-label="JavaScript" />;
             case 'SiRedux':
-                return <SiRedux />;
+                return <SiRedux aria-label="Redux" />;
             case 'SiSwagger':
-                return <SiSwagger />;
+                return <SiSwagger aria-label="Swagger" />;
             case 'SiMongodb':
-                return <SiMongodb />;
+                return <SiMongodb aria-label="MongoDB" />;
             default:
                 return null;
         }
     };
 
     return (
-        <section className="portfolio section-background" id="portfolio">
-            <h2>Portfolio</h2>
+        <section className="portfolio section-background" id="portfolio" aria-labelledby="portfolio-title">
+            <h2 id="portfolio-title">Portfolio</h2>
             <div className="portfolio-grid">
                 {projects.map((project) => (
-                    <div key={project.id} className="portfolio-item" onClick={() => openModal(project)}>
-                        <img src={images[project.image]} alt={project.title} />
+                    <article key={project.id} className="portfolio-item" onClick={() => openModal(project)} role="button" aria-label={`Voir les détails du projet ${project.title}`}>
+                        <img src={images[project.image]} alt={`Aperçu du projet ${project.title}`} />
                         <div className="portfolio-overlay">
                             <h3>{project.title}</h3>
                             <p>{project.description}</p>
                             <div className="portfolio-links">
-                                <a href={project.siteLink} className="portfolio-button" target="_blank" rel="noopener noreferrer">
+                                <a href={project.siteLink} className="portfolio-button" target="_blank" rel="noopener noreferrer" aria-label={`Voir le site du projet ${project.title}`}>
                                     Site
                                 </a>
-                                <a href={project.codeLink} className="portfolio-button github" target="_blank" rel="noopener noreferrer">
+                                <a href={project.codeLink} className="portfolio-button github" target="_blank" rel="noopener noreferrer" aria-label={`Voir le code source du projet ${project.title}`}>
                                     Code
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 ))}
             </div>
 
             {/* Affichage de la modale avec la classe 'open' si modalOpen est true */}
             {modalOpen && (
-                <div className={`portfolio-modal ${modalOpen ? 'open' : ''}`} onClick={closeModalOutside}>
+                <div className={`portfolio-modal ${modalOpen ? 'open' : ''}`} onClick={closeModalOutside} aria-labelledby="modal-title" aria-describedby="modal-description">
                     <div className="modal-content">
-                        <button className="close-modal" onClick={closeModal}>
-                            <i className="fa-solid fa-chevron-down"></i>
+                        <button className="close-modal" onClick={closeModal} aria-label="Fermer la modale">
+                            <i className="fa-solid fa-chevron-down" aria-hidden="true"></i>
                         </button>
-                        <h3>{modalContent.title}</h3>
-                        <p>{modalContent.modalDescription}</p>
+                        <h3 id="modal-title">{modalContent.title}</h3>
+                        <p id="modal-description">{modalContent.modalDescription}</p>
                         <div className="technologies">
                             <h4>Technologies utilisées :</h4>
                             <ul>

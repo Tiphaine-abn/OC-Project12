@@ -25,15 +25,15 @@ function Home() {
 
     return (
         <main>
-            <section id="hero" className="hero">
+            <section id="hero" className="hero" role="banner">
                 <div className="hero-content">
                     <h1 className="hero-title">Tiphaine Aubin</h1>
                     <p className="hero-subtitle">Développeuse - Intégratrice Web Junior</p>
-                    <a href="/portfolio" className="hero-button">Découvrir mes projets</a>
+                    <a href="/portfolio" className="hero-button" aria-label="Voir mes projets">Découvrir mes projets</a>
                 </div>
             </section>
 
-            <section id="about" className="sections">
+            <section id="about" className="sections" aria-labelledby="about-title">
                 <h2>À propos</h2>
                 <div className="about-header">
                     <h3>Développeuse Web Junior : Passionnée et créative !</h3>
@@ -58,77 +58,64 @@ function Home() {
                 </div>
             </section>
 
-            <section id="career" className="sections">
-                <h2>Parcours</h2>
+            <section id="career" className="sections" aria-labelledby="career-title">
+                <h2 id="career-title">Parcours</h2>
                 <Timeline />
             </section>
-            <section id="skills" className="sections">
-                <h2>Compétences</h2>
-                <h3>Technologies</h3>
-                <div className="skills-grid">
-                    <div className="skill frontend">
-                        <h3>Frontend</h3>
-                        <div className="icons">
-                            <SiHtml5 aria-label="HTML5" title="HTML5" />
-                            <SiCss3 aria-label="CSS3" title="CSS3" />
-                            <SiSass aria-label="Sass" title="Sass" />
-                            <SiJavascript aria-label="JavaScript" title="JavaScript" />
-                            <SiReact aria-label="React" title="React" />
-                            <SiRedux aria-label="Redux" title="Redux" />
+
+            <section id="skills" className="sections" aria-labelledby="skills-title">
+                <h2 id="skills-title">Compétences</h2>
+                <div className="technologies">
+                    <h3>Technologies</h3>
+                    <div className="skills-grid">
+                        <div className="skill frontend" aria-labelledby="frontend-title">
+                            <h3 id="frontend-title">Frontend</h3>
+                            <div className="icons" role="list">
+                                <SiHtml5 aria-label="HTML5" title="HTML5" />
+                                <SiCss3 aria-label="CSS3" title="CSS3" />
+                                <SiSass aria-label="Sass" title="Sass" />
+                                <SiJavascript aria-label="JavaScript" title="JavaScript" />
+                                <SiReact aria-label="React" title="React" />
+                                <SiRedux aria-label="Redux" title="Redux" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="skill backend">
-                        <h3>Backend</h3>
-                        <div className="icons">
-                            <BiLogoNodejs aria-label="Node.js" title="Node.js" />
-                            <SiMongodb aria-label="MongoDB" title="MongoDB" />
-                            <SiSwagger aria-label="Swagger" title="Swagger" />
+                        <div className="skill backend" aria-labelledby="backend-title">
+                            <h3 id="backend-title">Backend</h3>
+                            <div className="icons" role="list">
+                                <BiLogoNodejs aria-label="Node.js" title="Node.js" />
+                                <SiMongodb aria-label="MongoDB" title="MongoDB" />
+                                <SiSwagger aria-label="Swagger" title="Swagger" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="skill tools">
-                        <h3>Outils</h3>
-                        <div className="icons">
-                            <BiLogoVisualStudio aria-label="Visual Studio Code" title="Visual Studio Code" />
-                            <SiGithub aria-label="GitHub" title="GitHub" />
-                            <SiNotion aria-label="Notion" title="Notion" />
-                            <SiTrello aria-label="Trello" title="Trello" />
+                        <div className="skill tools" aria-labelledby="tools-title">
+                            <h3 id="tools-title">Outils</h3>
+                            <div className="icons" role="list">
+                                <BiLogoVisualStudio aria-label="Visual Studio Code" title="Visual Studio Code" />
+                                <SiGithub aria-label="GitHub" title="GitHub" />
+                                <SiNotion aria-label="Notion" title="Notion" />
+                                <SiTrello aria-label="Trello" title="Trello" />
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <h3>Domaines d'intervention</h3>
-                <div className="services-table">
-                    <div className="service-item">
-                        <h4>Création de sites Web responsives</h4>
-                        <p>Conception de sites web adaptatifs, respectant les maquettes et optimisés pour tous les appareils</p>
-                    </div>
-                    <div className="service-item">
-                        <h4>Développement d'applications Web avec React</h4>
-                        <p>Applications web interactives avec React et gestion de l'état via Redux</p>
-                    </div>
-                    <div className="service-item">
-                        <h4>Optimisation et débogage de sites Web</h4>
-                        <p>Optimisation de la performance et débogage des sites web pour une meilleure expérience utilisateur</p>
-                    </div>
-                    <div className="service-item">
-                        <h4>Gestion de versions et collaboration</h4>
-                        <p>Gestion du versioning de projets avec Git et GitHub pour faciliter la collaboration</p>
-                    </div>
-                    <div className="service-item">
-                        <h4>Intégration de données via API et formulaires</h4>
-                        <p>Intégration des données API et récupération des informations utilisateur via des formulaires</p>
-                    </div>
-                    <div className="service-item">
-                        <h4>Déploiement et mise en ligne de sites</h4>
-                        <p>Déploiement de sites web statiques sur des plateformes comme GitHub Pages</p>
-                    </div>
-                    <div className="service-item">
-                        <h4>Gestion de projet et spécifications techniques</h4>
-                        <p>Rédaction de spécifications techniques et gestion de l'avancement des projets avec des outils de gestion</p>
-                    </div>
-                    <div className="service-item">
-                        <h4>Veille technologique</h4>
-                        <p>Suivi des dernières technologies pour offrir des solutions modernes</p>
+                <div className="services">
+                    <h3>Domaines d'intervention</h3>
+                    <div className="services-table">
+                        {[
+                            ["Création de sites Web responsives", "Conception de sites web adaptatifs, respectant les maquettes et optimisés pour tous les appareils"],
+                            ["Développement d'applications Web avec React", "Applications web interactives avec React et gestion de l'état via Redux"],
+                            ["Optimisation et débogage de sites Web", "Optimisation de la performance et débogage des sites web pour une meilleure expérience utilisateur"],
+                            ["Gestion de versions et collaboration", "Gestion du versioning de projets avec Git et GitHub pour faciliter la collaboration"],
+                            ["Intégration de données via API et formulaires", "Intégration des données API et récupération des informations utilisateur via des formulaires"],
+                            ["Déploiement et mise en ligne de sites", "Déploiement de sites web statiques sur des plateformes comme GitHub Pages"],
+                            ["Gestion de projet et spécifications techniques", "Rédaction de spécifications techniques et gestion de l'avancement des projets avec des outils de gestion"],
+                            ["Veille technologique", "Suivi des dernières technologies pour offrir des solutions modernes"],
+                        ].map(([title, description], index) => (
+                            <div key={index} className="service-item">
+                                <h4>{title}</h4>
+                                <p>{description}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

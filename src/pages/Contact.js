@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 import ContactForm from '../components/ContactForm';
 import './style/Contact.scss';
 
@@ -16,21 +15,29 @@ const Contact = () => {
     };
 
     return (
-        <section className="contact" id="contact">
+        <section className="contact" id="contact" aria-labelledby="contact-title">
             <div className="contact-container">
                 <div className="contact-info">
-                    <h3>Mes coordonnées</h3>
+                    <h3 id="contact-info-title">
+                        Mes coordonnées
+                    </h3>
                     <div className="contact-item">
-                        <FontAwesomeIcon icon={faEnvelope} />
-                        <p>tiphaine.aubin28@hotmail.fr</p>
+                        <MdEmail aria-hidden="true" />
+                        <p aria-label="Adresse email : tiphaine.aubin28@hotmail.fr">
+                            tiphaine.aubin28@hotmail.fr
+                        </p>
                     </div>
                     <div className="contact-item">
-                        <FontAwesomeIcon icon={faPhone} />
-                        <p>+33 6 63 98 41 04</p>
+                        <MdPhone aria-hidden="true" />
+                        <p aria-label="Numéro de téléphone : +33 6 63 98 41 04">
+                            +33 6 63 98 41 04
+                        </p>
                     </div>
                     <div className="contact-item">
-                        <FontAwesomeIcon icon={faMapMarkerAlt} />
-                        <p>Paris, France</p>
+                        <MdLocationOn aria-hidden="true" />
+                        <p aria-label="Localisation : 29200 - Brest">
+                            29200 - Brest
+                        </p>
                     </div>
                 </div>
 

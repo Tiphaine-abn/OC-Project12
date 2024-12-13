@@ -9,36 +9,40 @@ import "./style/Timeline.scss";
 
 const Timeline = () => {
     return (
-        <section className="timeline-section">
+        <section className="timeline-section" aria-labelledby="timeline-title">
             <VerticalTimeline>
                 <VerticalTimelineElement
                     date="2025"
-                    icon={<FaLaptopCode />}
+                    icon={<FaLaptopCode aria-hidden="true" />}
                     iconClassName="timeline-icon-developer"
+                    aria-label="2025 : Développeuse Web"
                 >
                     <h3>Développeuse Web</h3>
                     <p>Création de sites modernes et responsives.</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     date="2024"
-                    icon={<FaGraduationCap />}
+                    icon={<FaGraduationCap aria-hidden="true" />}
                     iconClassName="timeline-icon-graduation"
+                    aria-label="2024 : Formation Développeuse Web"
                 >
                     <h3>Formation Développeuse Web</h3>
                     <p>Certification Développeuse - Intégratrice Web chez OpenClassrooms.</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     date="2020"
-                    icon={<FaGraduationCap />}
+                    icon={<FaGraduationCap aria-hidden="true" />}
                     iconClassName="timeline-icon-graduation"
+                    aria-label="2020 : Master 2 Pro en Patrimoine culturel et technique"
                 >
                     <h3>Master 2 Pro | Patrimoine culturel et technique</h3>
                     <p>Formation en gestion et valorisation du patrimoine culturel, avec une spécialisation en outils numériques de création et de design appliqués à la culture (Adobe XD, Photoshop, InDesign).</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     date="2012-2018"
-                    icon={<FaGraduationCap />}
+                    icon={<FaGraduationCap aria-hidden="true" />}
                     iconClassName="timeline-icon-graduation"
+                    aria-label="2012-2018 : Licence et Master 2 en Histoire de l'art"
                 >
                     <h3>Licence & Master 2 | Histoire de l'art</h3>
                     <p>Formation en histoire de l'art, avec une spécialisation en muséologie et gestion du patrimoine.</p>
