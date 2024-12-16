@@ -18,9 +18,9 @@ const Contact = () => {
         <section className="contact" id="contact" aria-labelledby="contact-title">
             <div className="contact-container">
                 <div className="contact-info">
-                    <h3 id="contact-info-title">
+                    <h2 id="contact-info-title">
                         Mes coordonnées
-                    </h3>
+                    </h2>
                     <div className="contact-item">
                         <MdEmail aria-hidden="true" />
                         <p aria-label="Adresse email : tiphaine.aubin28@hotmail.fr">
@@ -40,7 +40,6 @@ const Contact = () => {
                         </p>
                     </div>
                 </div>
-
                 <ContactForm onSubmit={handleFormSubmit} />
             </div>
         </section>

@@ -25,10 +25,15 @@ function Home() {
 
     return (
         <main>
+            <noscript>
+                <div>
+                    <p>Ce site nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans les paramètres de votre navigateur.</p>
+                </div>
+            </noscript>
             <section id="hero" className="hero" role="banner">
                 <div className="hero-content">
                     <h1 className="hero-title">Tiphaine Aubin</h1>
-                    <p className="hero-subtitle">Développeuse - Intégratrice Web Junior</p>
+                    <h2 className="hero-subtitle">Développeuse - Intégratrice Web Junior</h2>
                     <a href="/portfolio" className="hero-button" aria-label="Voir mes projets">Découvrir mes projets</a>
                 </div>
             </section>
@@ -69,7 +74,7 @@ function Home() {
                     <h3>Technologies</h3>
                     <div className="skills-grid">
                         <div className="skill frontend" aria-labelledby="frontend-title">
-                            <h3 id="frontend-title">Frontend</h3>
+                            <h4 id="frontend-title">Frontend</h4>
                             <div className="icons" role="list">
                                 <SiHtml5 aria-label="HTML5" title="HTML5" />
                                 <SiCss3 aria-label="CSS3" title="CSS3" />
@@ -80,7 +85,7 @@ function Home() {
                             </div>
                         </div>
                         <div className="skill backend" aria-labelledby="backend-title">
-                            <h3 id="backend-title">Backend</h3>
+                            <h4 id="backend-title">Backend</h4>
                             <div className="icons" role="list">
                                 <BiLogoNodejs aria-label="Node.js" title="Node.js" />
                                 <SiMongodb aria-label="MongoDB" title="MongoDB" />
@@ -88,7 +93,7 @@ function Home() {
                             </div>
                         </div>
                         <div className="skill tools" aria-labelledby="tools-title">
-                            <h3 id="tools-title">Outils</h3>
+                            <h4 id="tools-title">Outils</h4>
                             <div className="icons" role="list">
                                 <BiLogoVisualStudio aria-label="Visual Studio Code" title="Visual Studio Code" />
                                 <SiGithub aria-label="GitHub" title="GitHub" />

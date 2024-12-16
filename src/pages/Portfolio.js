@@ -60,13 +60,13 @@ function Portfolio() {
 
     return (
         <section className="portfolio section-background" id="portfolio" aria-labelledby="portfolio-title">
-            <h2 id="portfolio-title">Portfolio</h2>
+            <h1 id="portfolio-title">Portfolio</h1>
             <div className="portfolio-grid">
                 {projects.map((project) => (
                     <article key={project.id} className="portfolio-item" onClick={() => openModal(project)} role="button" aria-label={`Voir les détails du projet ${project.title}`}>
-                        <img src={images[project.image]} alt={`Aperçu du projet ${project.title}`} />
+                        <img src={images[project.image]} alt={`Aperçu du projet`} />
                         <div className="portfolio-overlay">
-                            <h3>{project.title}</h3>
+                            <h2>{project.title}</h2>
                             <p>{project.description}</p>
                             <div className="portfolio-links">
                                 <a href={project.siteLink} className="portfolio-button" target="_blank" rel="noopener noreferrer" aria-label={`Voir le site du projet ${project.title}`}>
@@ -88,10 +88,10 @@ function Portfolio() {
                         <button className="close-modal" onClick={closeModal} aria-label="Fermer la modale">
                             <i className="fa-solid fa-chevron-down" aria-hidden="true"></i>
                         </button>
-                        <h3 id="modal-title">{modalContent.title}</h3>
+                        <h2 id="modal-title">{modalContent.title}</h2>
                         <p id="modal-description">{modalContent.modalDescription}</p>
                         <div className="technologies">
-                            <h4>Technologies utilisées :</h4>
+                            <h3>Technologies utilisées :</h3>
                             <ul>
                                 {modalContent.technologies && modalContent.technologies.map((tech, index) => (
                                     <li key={index}>

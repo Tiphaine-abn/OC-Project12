@@ -9,7 +9,7 @@ function Footer() {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-section" aria-labelledby="contact-heading">
-                    <h2 id="contact-heading">Contact</h2>
+                    <h3 id="contact-heading">Contact</h3>
                     <ul>
                         <li>
                             <MdEmail aria-hidden="true" />
@@ -29,7 +29,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer-section" aria-labelledby="follow-heading">
-                    <h2 id="follow-heading">Me suivre</h2>
+                    <h3 id="follow-heading">Me suivre</h3>
                     <div className="social-icons" aria-label="Mes réseaux sociaux">
                         <a href="https://www.linkedin.com/in/tiphaine-aubin-80a291100/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn" title="Linkedin">
                             <FaLinkedin aria-hidden="true" />

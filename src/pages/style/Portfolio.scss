@@ -5,7 +5,7 @@
     padding: 50px 20px;
     min-height: 100%;
 
-    h2 {
+    h1 {
         font-family: $font-title;
         font-size: 36px;
         margin-bottom: 40px;
@@ -82,7 +82,7 @@
                     opacity: 1; // Devient visible au survol
                 }
 
-                h3 {
+                h2 {
                     font-size: 24px;
                     color: $light-color;
                 }
@@ -164,7 +164,7 @@
                 }
             }
 
-            h3 {
+            h2 {
                 font-family: $font-title;
                 font-size: 28px;
                 font-weight: bold;
@@ -184,7 +184,7 @@
             .technologies {
                 margin-top: 10px;
 
-                h4 {
+                h3 {
                     font-family: $font-title;
                     font-size: 18px;
                     margin-bottom: 10px;

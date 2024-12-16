@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; // Import de useLocation
 import './style/Header.scss';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo.webp';
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);

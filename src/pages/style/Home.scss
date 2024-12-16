@@ -3,7 +3,7 @@
 
 // HERO SECTION
 .hero {
-    @include background-gradient(rgba(218, 191, 255, 0.7), rgba(144, 122, 214, 0.7), '../../assets/abstract-background.jpg');
+    @include background-gradient(rgba(218, 191, 255, 0.7), rgba(144, 122, 214, 0.7), '../../assets/images/abstract-background.webp');
     height: 100vh;
     display: flex;
     align-items: center;
@@ -310,7 +310,7 @@
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             }
 
-            h3 {
+            h4 {
                 font-size: 20px;
                 color: $jordy-blue;
                 font-weight: bold;

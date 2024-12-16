@@ -15,6 +15,10 @@
         line-height: 1.5;
     }
 
+    svg {
+        font-size: 35px;
+    }
+
     .vertical-timeline-element-content {
         background: $secondary-color;
         color: $light-color;
@@ -35,13 +39,42 @@
     .vertical-timeline-element-icon {
         background: $primary-color;
         color: $light-color;
+
     }
 
-    .timeline-icon-developer {
-        background: $secondary-color;
+    .timeline-icon {
+
+        &--cv,
+        &--graduation {
+            background: $accent-color;
+        }
+
+        &--developer {
+            background: $secondary-color;
+        }
     }
 
-    .timeline-icon-graduation {
-        background: $accent-color;
+    .cv-download-button {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: $accent-color;
+        color: $dark-color;
+        text-decoration: none;
+        border-radius: 10px;
+        border: 4px solid $primary-color;
+        border-color: $primary-color;
+        font-size: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        @include box-shadow;
     }
+
+    .cv-download-button:hover,
+    .cv-download-button:focus {
+        background-color: $light-color;
+        color: $secondary-color;
+        outline: none;
+    }
+
 }

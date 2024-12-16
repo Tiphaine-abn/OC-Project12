@@ -32,7 +32,7 @@ const ContactForm = ({ onSubmit }) => {
 
     return (
         <form className="contact-form" onSubmit={handleSubmit} aria-labelledby="contact-form-title">
-            <h2 id="contact-form-title">Contact</h2>
+            <h1 id="contact-form-title">Contact</h1>
             {error && (
                 <div className="form-error" role="alert" aria-live="assertive">
                     {error}
