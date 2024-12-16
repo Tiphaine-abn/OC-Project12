@@ -11,7 +11,7 @@ import "./style/Timeline.scss";
 
 const Timeline = () => {
     return (
-        <section>
+        <section className="timeline-section">
             <VerticalTimeline>
                 <VerticalTimelineElement
                     date=""
