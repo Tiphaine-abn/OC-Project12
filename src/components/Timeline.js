@@ -11,7 +11,7 @@ import "./style/Timeline.scss";
 
 const Timeline = () => {
     return (
-        <section className="timeline-section" aria-labelledby="timeline-title">
+        <section>
             <VerticalTimeline>
                 <VerticalTimelineElement
                     date=""
@@ -19,7 +19,7 @@ const Timeline = () => {
                     iconClassName="timeline-icon timeline-icon--cv"
                     aria-label="Télécharger mon CV"
                 >
-                    <a href={CV} className="cv-download-button" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV de Tiphaine Aubin" download>
+                    <a href={CV} className="cv-download-button" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV PDF de Tiphaine Aubin" download>
                         Mon CV (PDF)<MdOutlineFileDownload aria-hidden="true" />
                     </a>
                     <p>Consultez mon parcours en détail en téléchargeant mon CV complet.</p>

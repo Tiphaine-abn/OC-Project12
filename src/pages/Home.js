@@ -33,7 +33,7 @@ function Home() {
                 </div>
             </section>
 
-            <section id="about" className="sections" aria-labelledby="#about">
+            <section id="about" className="sections" aria-labelledby="about">
                 <h2>À propos</h2>
                 <div className="about-header">
                     <h3>Développeuse Web Junior : Passionnée et créative !</h3>
@@ -58,12 +58,12 @@ function Home() {
                 </div>
             </section>
 
-            <section id="career" className="sections" aria-labelledby="#career">
+            <section id="career" className="sections" aria-labelledby="career">
                 <h2>Parcours</h2>
                 <Timeline />
             </section>
 
-            <section id="skills" className="sections" aria-labelledby="#skills">
+            <section id="skills" className="sections" aria-labelledby="skills">
                 <h2>Compétences</h2>
                 <div className="technologies">
                     <h3>Technologies</h3>

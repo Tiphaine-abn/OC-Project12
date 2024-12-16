@@ -64,7 +64,7 @@ function Portfolio() {
             <div className="portfolio-grid">
                 {projects.map((project) => (
                     <article key={project.id} className="portfolio-item" onClick={() => openModal(project)} role="button" aria-label={`Voir les détails du projet ${project.title}`}>
-                        <img src={images[project.image]} alt={`Aperçu du projet`} />
+                        <img src={images[project.image]} alt={`Aperçu du projet${project.title}`} />
                         <div className="portfolio-overlay">
                             <h2>{project.title}</h2>
                             <p>{project.description}</p>
