@@ -25,11 +25,6 @@ function Home() {
 
     return (
         <main>
-            <noscript>
-                <div>
-                    <p>Ce site nécessite JavaScript pour fonctionner correctement. Veuillez activer JavaScript dans les paramètres de votre navigateur.</p>
-                </div>
-            </noscript>
             <section id="hero" className="hero" role="banner">
                 <div className="hero-content">
                     <h1 className="hero-title">Tiphaine Aubin</h1>
@@ -38,7 +33,7 @@ function Home() {
                 </div>
             </section>
 
-            <section id="about" className="sections" aria-labelledby="about-title">
+            <section id="about" className="sections" aria-labelledby="#about">
                 <h2>À propos</h2>
                 <div className="about-header">
                     <h3>Développeuse Web Junior : Passionnée et créative !</h3>
@@ -63,13 +58,13 @@ function Home() {
                 </div>
             </section>
 
-            <section id="career" className="sections" aria-labelledby="career-title">
-                <h2 id="career-title">Parcours</h2>
+            <section id="career" className="sections" aria-labelledby="#career">
+                <h2>Parcours</h2>
                 <Timeline />
             </section>
 
-            <section id="skills" className="sections" aria-labelledby="skills-title">
-                <h2 id="skills-title">Compétences</h2>
+            <section id="skills" className="sections" aria-labelledby="#skills">
+                <h2>Compétences</h2>
                 <div className="technologies">
                     <h3>Technologies</h3>
                     <div className="skills-grid">
