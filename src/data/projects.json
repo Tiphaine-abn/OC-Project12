@@ -51,7 +51,7 @@
         "description": "Application bancaire utilisant Redux.",
         "modalDescription": "Le projet ArgentBank consistait en la création d'une application web pour une banque en ligne. La première phase a impliqué la mise en place du système d'authentification avec React, où les utilisateurs peuvent se connecter, se déconnecter et gérer leur profil. Le state de l'application est géré avec Redux et les bonnes pratiques de développement ont été appliquées, comme l'optimisation des images et la création de composants réutilisables. La deuxième phase du projet s'est concentrée sur la gestion des transactions : les utilisateurs peuvent visualiser, ajouter, modifier ou supprimer des informations de transactions. Les routes API nécessaires ont été définies et documentées en suivant les directives de Swagger pour permettre l'intégration avec le back-end.",
         "image": "argentbankImg",
-        "siteLink": "#",
+        "siteLink": "https://tiphaine-abn.github.io/ArgentBank-Frontend/",
         "codeLink": "https://github.com/Tiphaine-abn/ArgentBank-Frontend",
         "technologies": [
             {

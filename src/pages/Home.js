@@ -70,31 +70,31 @@ function Home() {
                     <div className="skills-grid">
                         <div className="skill frontend" aria-labelledby="frontend-title">
                             <h4 id="frontend-title">Frontend</h4>
-                            <div className="icons" role="list">
-                                <SiHtml5 aria-label="HTML5" title="HTML5" />
-                                <SiCss3 aria-label="CSS3" title="CSS3" />
-                                <SiSass aria-label="Sass" title="Sass" />
-                                <SiJavascript aria-label="JavaScript" title="JavaScript" />
-                                <SiReact aria-label="React" title="React" />
-                                <SiRedux aria-label="Redux" title="Redux" />
-                            </div>
+                            <ul className="icons">
+                                <li><SiHtml5 aria-label="HTML5" title="HTML5" /></li>
+                                <li><SiCss3 aria-label="CSS3" title="CSS3" /></li>
+                                <li><SiSass aria-label="Sass" title="Sass" /></li>
+                                <li><SiJavascript aria-label="JavaScript" title="JavaScript" /></li>
+                                <li><SiReact aria-label="React" title="React" /></li>
+                                <li><SiRedux aria-label="Redux" title="Redux" /></li>
+                            </ul>
                         </div>
                         <div className="skill backend" aria-labelledby="backend-title">
                             <h4 id="backend-title">Backend</h4>
-                            <div className="icons" role="list">
-                                <BiLogoNodejs aria-label="Node.js" title="Node.js" />
-                                <SiMongodb aria-label="MongoDB" title="MongoDB" />
-                                <SiSwagger aria-label="Swagger" title="Swagger" />
-                            </div>
+                            <ul className="icons">
+                                <li><BiLogoNodejs aria-label="Node.js" title="Node.js" /></li>
+                                <li><SiMongodb aria-label="MongoDB" title="MongoDB" /></li>
+                                <li><SiSwagger aria-label="Swagger" title="Swagger" /></li>
+                            </ul>
                         </div>
                         <div className="skill tools" aria-labelledby="tools-title">
                             <h4 id="tools-title">Outils</h4>
-                            <div className="icons" role="list">
-                                <BiLogoVisualStudio aria-label="Visual Studio Code" title="Visual Studio Code" />
-                                <SiGithub aria-label="GitHub" title="GitHub" />
-                                <SiNotion aria-label="Notion" title="Notion" />
-                                <SiTrello aria-label="Trello" title="Trello" />
-                            </div>
+                            <ul className="icons">
+                                <li><BiLogoVisualStudio aria-label="Visual Studio Code" title="Visual Studio Code" /></li>
+                                <li><SiGithub aria-label="GitHub" title="GitHub" /></li>
+                                <li><SiNotion aria-label="Notion" title="Notion" /></li>
+                                <li><SiTrello aria-label="Trello" title="Trello" /></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

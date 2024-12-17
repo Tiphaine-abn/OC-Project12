@@ -20,9 +20,9 @@ const Timeline = () => {
                     aria-label="Télécharger mon CV"
                 >
                     <a href={CV} className="cv-download-button" target="_blank" rel="noopener noreferrer" aria-label="Télécharger le CV PDF de Tiphaine Aubin" download>
-                        Mon CV (PDF)<MdOutlineFileDownload aria-hidden="true" />
+                        Mon CV <MdOutlineFileDownload aria-hidden="true" />
                     </a>
-                    <p>Consultez mon parcours en détail en téléchargeant mon CV complet.</p>
+                    <p>Consultez mon parcours en détail en téléchargeant mon CV complet en PDF.</p>
                 </VerticalTimelineElement>
                 <VerticalTimelineElement
                     date="2025"
