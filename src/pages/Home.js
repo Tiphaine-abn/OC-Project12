@@ -25,7 +25,7 @@ function Home() {
 
     return (
         <main>
-            <section id="hero" className="hero" role="banner">
+            <section id="hero" className="hero">
                 <div className="hero-content">
                     <h1 className="hero-title">Tiphaine Aubin</h1>
                     <h2 className="hero-subtitle">Développeuse - Intégratrice Web Junior</h2>
@@ -33,8 +33,8 @@ function Home() {
                 </div>
             </section>
 
-            <section id="about" className="sections" aria-labelledby="about">
-                <h2>À propos</h2>
+            <section id="about" className="sections" aria-labelledby="about-title">
+                <h2 id="about-title">À propos</h2>
                 <div className="about-header">
                     <h3>Développeuse Web Junior : Passionnée et créative !</h3>
                 </div>
@@ -58,17 +58,17 @@ function Home() {
                 </div>
             </section>
 
-            <section id="career" className="sections" aria-labelledby="career">
-                <h2>Parcours</h2>
+            <section id="career" className="sections" aria-labelledby="career-title">
+                <h2 id="career-title">Parcours</h2>
                 <Timeline />
             </section>
 
-            <section id="skills" className="sections" aria-labelledby="skills">
-                <h2>Compétences</h2>
+            <section id="skills" className="sections" aria-labelledby="skills-title">
+                <h2 id="skills-title">Compétences</h2>
                 <div className="technologies">
                     <h3>Technologies</h3>
                     <div className="skills-grid">
-                        <div className="skill frontend" aria-labelledby="frontend-title">
+                        <div className="skill frontend">
                             <h4 id="frontend-title">Frontend</h4>
                             <ul className="icons">
                                 <li><SiHtml5 aria-label="HTML5" title="HTML5" /></li>
@@ -79,7 +79,7 @@ function Home() {
                                 <li><SiRedux aria-label="Redux" title="Redux" /></li>
                             </ul>
                         </div>
-                        <div className="skill backend" aria-labelledby="backend-title">
+                        <div className="skill backend">
                             <h4 id="backend-title">Backend</h4>
                             <ul className="icons">
                                 <li><BiLogoNodejs aria-label="Node.js" title="Node.js" /></li>
@@ -87,7 +87,7 @@ function Home() {
                                 <li><SiSwagger aria-label="Swagger" title="Swagger" /></li>
                             </ul>
                         </div>
-                        <div className="skill tools" aria-labelledby="tools-title">
+                        <div className="skill tools">
                             <h4 id="tools-title">Outils</h4>
                             <ul className="icons">
                                 <li><BiLogoVisualStudio aria-label="Visual Studio Code" title="Visual Studio Code" /></li>

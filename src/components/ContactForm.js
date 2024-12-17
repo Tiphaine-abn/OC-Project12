@@ -43,21 +43,21 @@ const ContactForm = ({ onSubmit }) => {
                 <input
                     type="text" id="fullName" name="fullName" value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Votre nom et prénom" required aria-required="true" />
+                    placeholder="Votre nom et prénom" required />
             </div>
             <div className="form-group">
                 <label htmlFor="email">Email <span aria-hidden="true">*</span></label>
                 <input
                     type="email" id="email" name="email" value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Votre email" required aria-required="true" />
+                    placeholder="Votre email" required />
             </div>
             <div className="form-group">
                 <label htmlFor="subject">Objet <span aria-hidden="true">*</span></label>
                 <input
                     type="text" id="subject" name="subject" value={subject}
                     onChange={(e) => setSubject(e.target.value)}
-                    placeholder="Objet de votre message" required aria-required="true" />
+                    placeholder="Objet de votre message" required />
             </div>
             <div className="form-group">
                 <label htmlFor="message">Message <span aria-hidden="true">*</span></label>
@@ -65,7 +65,7 @@ const ContactForm = ({ onSubmit }) => {
                     id="message" name="message" value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows="5"
-                    placeholder="Votre message" required aria-required="true">
+                    placeholder="Votre message" required>
                 </textarea>
             </div>
             <button type="submit" className="contact-button" aria-label="Envoyer le formulaire">Envoyer</button>
