@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Modal from '../components/Modal';
 import ohmyfoodImg from '../assets/images/ohmyfood.webp';
 import kasaImg from '../assets/images/kasa.webp';
 import argentbankImg from '../assets/images/argentbank.webp';
 import sophiebluelImg from '../assets/images/sophiebluel.webp';
-import { FaSass, FaHtml5, FaCss3Alt, FaReact, FaJsSquare } from 'react-icons/fa';
-import { SiRedux, SiSwagger, SiMongodb } from "react-icons/si";
 import projects from '../data/projects.json';
 import './style/Portfolio.scss';
 
@@ -35,19 +34,25 @@ function Portfolio() {
         }
     };
 
-    const getTechnologyIcon = (tech) => {
-        const techMap = {
-            FaSass: <FaSass aria-label="Sass" />,
-            FaHtml5: <FaHtml5 aria-label="HTML5" />,
-            FaCss3Alt: <FaCss3Alt aria-label="CSS3" />,
-            FaReact: <FaReact aria-label="React" />,
-            FaJsSquare: <FaJsSquare aria-label="JavaScript" />,
-            SiRedux: <SiRedux aria-label="Redux" />,
-            SiSwagger: <SiSwagger aria-label="Swagger" />,
-            SiMongodb: <SiMongodb aria-label="MongoDB" />,
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant',
+        });
+    }, []);
+
+    // Gérer l'état du défilement
+    useEffect(() => {
+        if (modalOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
         };
-        return techMap[tech] || null;
-    };
+    }, [modalOpen]);
 
     return (
         <section className="portfolio section-background" id="portfolio" aria-labelledby="portfolio-title">
@@ -90,40 +95,13 @@ function Portfolio() {
                 ))}
             </div>
 
+            {/* Utilisation du composant Modal */}
             {modalOpen && (
-                <div
-                    className="portfolio-modal open"
-                    onClick={closeModalOutside}
-                    aria-labelledby="modal-title"
-                    aria-describedby="modal-description"
-                >
-                    <div className="modal-content">
-                        <button
-                            className="close-modal"
-                            onClick={closeModal}
-                            aria-label="Fermer la modale"
-                        >
-                            <i className="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                        </button>
-                        {modalContent && (
-                            <>
-                                <h2 id="modal-title">{modalContent.title}</h2>
-                                <p id="modal-description">{modalContent.modalDescription}</p>
-                                <div className="technologies">
-                                    <h3>Technologies utilisées :</h3>
-                                    <ul>
-                                        {modalContent.technologies &&
-                                            modalContent.technologies.map((tech, index) => (
-                                                <li key={index}>
-                                                    {getTechnologyIcon(tech.icon)}
-                                                </li>
-                                            ))}
-                                    </ul>
-                                </div>
-                            </>
-                        )}
-                    </div>
-                </div>
+                <Modal
+                    modalContent={modalContent}
+                    closeModal={closeModal}
+                    closeModalOutside={closeModalOutside}
+                />
             )}
         </section>
     );

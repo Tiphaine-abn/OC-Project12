@@ -11,12 +11,12 @@ function Home() {
 
     useEffect(() => {
         const hash = window.location.hash; // Récupère le hash dans l'URL
+        const navbarHeight = document.querySelector('.navbar-custom').offsetHeight; // Hauteur de la barre de navigation
         if (hash) {
             const element = document.querySelector(hash); // Sélectionne l'élément correspondant
             if (element) {
-                const navbarHeight = document.querySelector('.navbar-custom').offsetHeight; // Hauteur de la barre de navigation
                 window.scrollTo({
-                    top: element.offsetTop - navbarHeight, // Ajuste avec la hauteur
+                    top: element.offsetTop - navbarHeight, // Ajuste la position de défilement en tenant compte de la hauteur de la navbar
                     behavior: 'smooth',
                 });
             }

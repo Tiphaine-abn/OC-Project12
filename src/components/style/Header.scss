@@ -2,13 +2,15 @@
 @import '../../styles/mixins';
 
 .navbar-custom {
-    position: static;
+    position: sticky;
     background-color: $light-color;
-    z-index: 10;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
     @include transition(background-color 0.3s, box-shadow 0.3s);
 
     &.scrolled {
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         width: 100%;

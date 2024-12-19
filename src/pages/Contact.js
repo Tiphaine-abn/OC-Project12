@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 import ContactForm from '../components/ContactForm';
 import './style/Contact.scss';
@@ -13,6 +13,13 @@ const Contact = () => {
         // Ouvre le client de messagerie avec les informations du formulaire
         window.location.href = mailtoLink;
     };
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant',
+        });
+    }, []);
 
     return (
         <section className="contact" id="contact" aria-labelledby="contact-title">
