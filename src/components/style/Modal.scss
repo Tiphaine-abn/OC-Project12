@@ -10,8 +10,13 @@
     color: $light-color;
     z-index: 100;
     @include modal-transition(70vh, 0.5s);
-    overflow-y: scroll;
+    overflow-y: hidden;
 
+    @media (max-width: 670px) {
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
 
     .modal-content {
         padding: 32px;
