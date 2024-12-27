@@ -3,6 +3,7 @@ import { FaSass, FaHtml5, FaCss3Alt, FaReact, FaJsSquare } from 'react-icons/fa'
 import { SiRedux, SiSwagger, SiMongodb } from "react-icons/si";
 import './style/Modal.scss';
 
+// Modale du Portfolio
 const Modal = ({ modalContent, closeModal, closeModalOutside }) => {
     const getTechnologyIcon = (tech) => {
         const techMap = {
@@ -15,7 +16,7 @@ const Modal = ({ modalContent, closeModal, closeModalOutside }) => {
             SiSwagger: <SiSwagger aria-label="Swagger" />,
             SiMongodb: <SiMongodb aria-label="MongoDB" />,
         };
-        return techMap[tech] || null;
+        return techMap[tech] || null; // Retourne l'icône correspondante à la technologie, ou null si l'icône n'est pas trouvée.
     };
 
     if (!modalContent) return null;

@@ -1,14 +1,12 @@
 import React from "react";
-import {
-    VerticalTimeline,
-    VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement, } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { FaGraduationCap, FaLaptopCode } from "react-icons/fa";
 import { MdOutlineContactPage, MdOutlineFileDownload } from "react-icons/md";
 import CV from '../assets/CV_TIPHAINE_AUBIN_2024.pdf';
 import "./style/Timeline.scss";
 
+// Chronologie verticale
 const Timeline = () => {
     return (
         <section className="timeline-section">
