@@ -3,7 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement, } from "react-vertical-timel
 import "react-vertical-timeline-component/style.min.css";
 import { FaGraduationCap, FaLaptopCode } from "react-icons/fa";
 import { MdOutlineContactPage, MdOutlineFileDownload } from "react-icons/md";
-import CV from '../assets/CV25_AUBIN_Tiphaine.pdf';
+import CV from '../assets/CV25-AUBIN-Tiphaine.pdf';
 import "./style/Timeline.scss";
 
 // Chronologie verticale
